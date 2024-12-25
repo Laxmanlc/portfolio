@@ -3,14 +3,14 @@ import 'package:portfolio/hoverable.dart';
 import 'package:portfolio/glassmorph.dart';
 import 'package:portfolio/web.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Webview extends StatefulWidget {
+  const Webview({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Webview> createState() => _WebviewState();
 }
 
-class _HomeState extends State<Home> {
+class _WebviewState extends State<Webview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GlassmorphicContainer(
-                    width: MediaQuery.of(context).size.width * 0.53,
+                    width: MediaQuery.of(context).size.width * 0.55,
                     height: MediaQuery.of(context).size.height * 0.9,
                     child: const SingleChildScrollView(
                       child: Column(
