@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/commonbutton.dart';
-import 'package:portfolio/commonimage.dart';
+import 'package:portfolio/widgets/commonbutton.dart';
+import 'package:portfolio/src/commonimage.dart';
 
 class ButtonsRow extends StatelessWidget {
   const ButtonsRow({super.key});

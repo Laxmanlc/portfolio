@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/cards.dart';
-import 'package:portfolio/widgets.dart';
+import 'package:portfolio/widgets/cards.dart';
+import 'package:portfolio/widgets/widgets.dart';
 
 class ContainerItems extends StatefulWidget {
   const ContainerItems({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/hoverable.dart';
-import 'package:portfolio/glassmorph.dart';
-import 'package:portfolio/web.dart';
+import 'package:portfolio/widgets/hoverable.dart';
+import 'package:portfolio/widgets/glassmorph.dart';
+import 'package:portfolio/widgets/containeritems.dart';
 
 class Webview extends StatefulWidget {
   const Webview({super.key});
