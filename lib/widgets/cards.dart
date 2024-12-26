@@ -9,15 +9,17 @@ class Cards extends StatefulWidget {
 }
 
 class _CardsState extends State<Cards> {
-  // This method returns a container with customizable parameters
-  Widget makeCard(
-      {required String title,
-      required String description,
-      required Color borderColor,
-      required Color hoverColor}) {
+  Widget makeCard({
+    required String title,
+    required String description,
+    required String description2,
+    required Color borderColor,
+    required Color hoverColor,
+  }) {
     return _Card(
       title: title,
       description: description,
+      description2: description2,
       borderColor: borderColor,
       hoverColor: hoverColor,
     );
@@ -26,33 +28,37 @@ class _CardsState extends State<Cards> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300, // Set the height of the scrollable area
+      height: 300,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            // Add multiple containers using the `makeCard` method
             makeCard(
               title: "Cross Platform App Development",
               description: "From concept to app with Flutter Power.",
+              description2:
+                  "I am a Flutter developer with over 2 years of experience creating apps using Flutter and Firebase. I can build apps with a focus on functionality and user needs.",
               borderColor: Colors.blueAccent,
               hoverColor: const Color.fromARGB(255, 2, 255, 251),
             ),
-            const SizedBox(width: 20), // Space between containers
+            const SizedBox(width: 20),
             makeCard(
               title: "UI/UX Design",
               description: "Turning ideas into intuitive designs with Figma.",
+              description2:
+                  "More than 2 years of experience using Figma to design simple and practical interfaces. I focus on making designs that are easy to use and meet the needs of users",
               borderColor: Colors.green,
               hoverColor: const Color.fromARGB(255, 100, 255, 100),
             ),
-            const SizedBox(width: 20), // Space between containers
+            const SizedBox(width: 20),
             makeCard(
               title: "Website Development",
               description: "Developing modern websites with Flutter.",
+              description2:
+                  "I design every type of websites using Flutter, creating responsive and user-friendly experiences that work smoothly across all devices.",
               borderColor: Colors.purple,
               hoverColor: Colors.purpleAccent,
             ),
-            // Add more cards as needed
           ],
         ),
       ),
@@ -63,12 +69,14 @@ class _CardsState extends State<Cards> {
 class _Card extends StatefulWidget {
   final String title;
   final String description;
+  final String description2;
   final Color borderColor;
   final Color hoverColor;
 
   const _Card({
     required this.title,
     required this.description,
+    required this.description2,
     required this.borderColor,
     required this.hoverColor,
   });
@@ -81,8 +89,7 @@ class _CardState extends State<_Card> {
   Color _textColor = Colors.white;
   Color _containerColor = Colors.transparent;
 
-  // Method to show the "Read More" message
-  void _showMessage(BuildContext context) {
+  void _showMessage(BuildContext context, {required String description2}) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -90,8 +97,8 @@ class _CardState extends State<_Card> {
           backgroundColor: const Color.fromARGB(255, 43, 42, 42),
           child: Container(
             padding: const EdgeInsets.all(10),
-            width: 600, // Increased dialog size
-            height: 500, // Increased dialog size
+            width: 600,
+            height: 500,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -101,7 +108,7 @@ class _CardState extends State<_Card> {
                     IconButton(
                       icon: const Icon(Icons.close, color: Colors.white),
                       onPressed: () {
-                        Navigator.of(context).pop(); // Close the dialog
+                        Navigator.of(context).pop();
                       },
                     ),
                   ],
@@ -116,9 +123,11 @@ class _CardState extends State<_Card> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  widget.description,
+                  description2,
                   style: const TextStyle(
-                      color: Colors.white, fontSize: 25, fontFamily: exofont),
+                      color: Color.fromARGB(255, 180, 180, 180),
+                      fontSize: 25,
+                      fontFamily: exofont),
                 ),
               ],
             ),
@@ -149,7 +158,7 @@ class _CardState extends State<_Card> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(color: widget.borderColor, width: 2),
-          borderRadius: BorderRadius.circular(12), // Rounded corners
+          borderRadius: BorderRadius.circular(12),
           color: _containerColor,
         ),
         child: Column(
@@ -178,7 +187,10 @@ class _CardState extends State<_Card> {
               splashColor: Colors.blue,
               color: Colors.transparent,
               onPressed: () {
-                _showMessage(context);
+                _showMessage(
+                  context,
+                  description2: widget.description2,
+                );
               },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
