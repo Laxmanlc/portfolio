@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/fonts.dart';
 import 'package:portfolio/widgets/commonbutton.dart';
 import 'package:portfolio/src/commonimage.dart';
 
@@ -26,7 +27,10 @@ class ButtonsRow extends StatelessWidget {
             ),
             child: const Text(
               "Contact Me",
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontFamily: robotoslabfont),
             ),
           ),
           commonButtonWithImage(imagePath: github, onTap: () {}),
@@ -68,13 +72,15 @@ Row textofrow({required String text1, required String text2}) {
       Text(
         text1,
         style: const TextStyle(
-            fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white),
+            fontSize: 40, color: Colors.white, fontFamily: antonfont),
       ),
       const SizedBox(
         width: 5,
       ),
       Text(text2,
-          style: const TextStyle(color: Color.fromARGB(255, 164, 163, 163)))
+          style: const TextStyle(
+              color: Color.fromARGB(255, 164, 163, 163),
+              fontFamily: robotoslabfont))
     ],
   );
 }

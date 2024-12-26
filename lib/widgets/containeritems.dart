@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/fonts.dart';
 import 'package:portfolio/widgets/cards.dart';
 import 'package:portfolio/widgets/widgets.dart';
 
@@ -21,7 +22,7 @@ class _ContainerItemsState extends State<ContainerItems> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 200,
+              height: 250,
               width: 500,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,31 +39,34 @@ class _ContainerItemsState extends State<ContainerItems> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        "I'm Laxman",
+                        " I'm Laxman",
                         style: TextStyle(
                             fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: meriendafont,
                             color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                       ShaderMask(
                         shaderCallback: (bounds) => const LinearGradient(
                           colors: [
-                            Color.fromARGB(255, 255, 145, 1),
-                            Colors.blue,
-                            Colors.green
+                            Color.fromARGB(255, 243, 17, 251),
+                            Color.fromARGB(255, 1, 217, 255),
+                            Color.fromARGB(255, 2, 254, 40),
+                            Color.fromARGB(255, 241, 241, 4),
+                            Color.fromARGB(255, 241, 130, 4)
                           ],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(
                             Rect.fromLTWH(0, 0, bounds.width, bounds.height)),
-                        child: const Expanded(
-                          child: Text(
-                            'Flutter developer \n& UI/UX designer',
-                            style: TextStyle(
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Colors
-                                  .white, // This is required for the gradient to be visible.
-                            ),
+                        child: const Text(
+                          'Flutter developer \n& UI/UX designer',
+                          style: TextStyle(
+                            fontFamily: antonfont,
+                            fontSize: 45,
+
+                            color: Colors
+                                .white, // This is required for the gradient to be visible.
                           ),
                         ),
                       ),
@@ -75,7 +79,8 @@ class _ContainerItemsState extends State<ContainerItems> {
                           Text(
                             "Nepal - Karnali Province ,  Surkhet",
                             style: TextStyle(
-                                fontSize: 14,
+                                fontFamily: robotoslabfont,
+                                fontSize: 16,
                                 color: Color.fromARGB(255, 172, 170, 170)),
                           )
                         ],
@@ -103,10 +108,10 @@ class _ContainerItemsState extends State<ContainerItems> {
                       child: Text(
                         "What I Can Offer For You",
                         style: TextStyle(
-                          fontSize: 50,
-                          color: Color.fromARGB(255, 1, 217, 255),
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 50,
+                            color: Color.fromARGB(255, 1, 217, 255),
+                            fontFamily: robotoslabfont,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     Expanded(
@@ -114,8 +119,8 @@ class _ContainerItemsState extends State<ContainerItems> {
                         "**Transforming Ideas into Technology**",
                         style: TextStyle(
                           fontSize: 25,
+                          fontFamily: exofont,
                           color: Color.fromARGB(255, 178, 179, 180),
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

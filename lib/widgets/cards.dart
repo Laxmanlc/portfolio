@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/fonts.dart';
 
 class Cards extends StatefulWidget {
   const Cards({super.key});
@@ -88,7 +89,7 @@ class _CardState extends State<_Card> {
         return Dialog(
           backgroundColor: const Color.fromARGB(255, 43, 42, 42),
           child: Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             width: 600, // Increased dialog size
             height: 500, // Increased dialog size
             child: Column(
@@ -108,15 +109,16 @@ class _CardState extends State<_Card> {
                 Text(
                   widget.title,
                   style: const TextStyle(
+                    fontFamily: antonfont,
                     color: Colors.white,
                     fontSize: 50,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   widget.description,
-                  style: const TextStyle(color: Colors.white, fontSize: 25),
+                  style: const TextStyle(
+                      color: Colors.white, fontSize: 25, fontFamily: exofont),
                 ),
               ],
             ),
@@ -156,8 +158,8 @@ class _CardState extends State<_Card> {
             Text(
               widget.title,
               style: TextStyle(
+                fontFamily: antonfont,
                 fontSize: 30,
-                fontWeight: FontWeight.bold,
                 color: _textColor,
               ),
             ),
@@ -165,6 +167,7 @@ class _CardState extends State<_Card> {
             Text(
               widget.description,
               style: TextStyle(
+                fontFamily: exofont,
                 fontSize: 20,
                 color: _textColor,
               ),
@@ -183,7 +186,8 @@ class _CardState extends State<_Card> {
               ),
               child: const Text(
                 "Readmore",
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 16, color: Colors.white, fontFamily: exofont),
               ),
             ),
           ],
