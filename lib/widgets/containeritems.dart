@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/commonimage.dart';
 import 'package:portfolio/src/fonts.dart';
 import 'package:portfolio/widgets/cards.dart';
 import 'package:portfolio/widgets/widgets.dart';
@@ -128,7 +129,101 @@ class _ContainerItemsState extends State<ContainerItems> {
                 ),
               ),
             ),
-            const Cards()
+            const Cards(),
+            const SizedBox(
+              height: 20,
+            ),
+            const Center(
+              child: Text(
+                " Skills",
+                style: TextStyle(
+                    fontSize: 60,
+                    color: Color.fromARGB(255, 1, 217, 255),
+                    fontFamily: robotoslabfont,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Skills(
+                    imagePath: flutter,
+                    text: "Flutter",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 63, 34, 252),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: dart,
+                    text: "Dart",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 16, 245, 211),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: figma,
+                    text: "Figma",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 255, 135, 7),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: photosp,
+                    text: "Photoshop",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 20, 122, 255),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: aurdino,
+                    text: "Aurdino",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 3, 246, 141),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: firebase,
+                    text: "Firebase",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: Colors.amber,
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: github,
+                    text: "Github",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 86, 86, 86),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: clang,
+                    text: "C",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 162, 38, 196),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: cplus,
+                    text: "C++",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 9, 72, 172),
+                    onTapAction: () {},
+                  ),
+                  Skills(
+                    imagePath: canva,
+                    text: "Canva",
+                    normalColor: const Color.fromARGB(174, 255, 255, 255),
+                    hoverColor: const Color.fromARGB(255, 130, 213, 249),
+                    onTapAction: () {},
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

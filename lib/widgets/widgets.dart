@@ -84,3 +84,103 @@ Row textofrow({required String text1, required String text2}) {
     ],
   );
 }
+
+// Skills
+
+class Skills extends StatefulWidget {
+  final String imagePath;
+  final String text;
+  final Color normalColor; // Color passed for the normal state
+  final Color hoverColor; // Color passed for the hover state
+  final Function onTapAction;
+
+  const Skills({
+    super.key,
+    required this.imagePath,
+    required this.text,
+    required this.normalColor, // Normal state color
+    required this.hoverColor, // Hover state color
+    required this.onTapAction, // A callback function for tap action
+  });
+
+  @override
+  State<Skills> createState() => _SkillsState();
+}
+
+class _SkillsState extends State<Skills> {
+  double scale = 1.0;
+  Color containerColor = Colors.white; // Initial container color
+
+  // Function to handle scaling and color change on hover
+  void _onHover(PointerEvent details) {
+    setState(() {
+      scale = 1.1; // Slight zoom effect on hover
+      containerColor = widget.hoverColor; // Use the hover color passed
+    });
+  }
+
+  // Function to reset scale and color when hover ends
+  void _onExit(PointerEvent details) {
+    setState(() {
+      scale = 1.0; // Normal size when hover ends
+      containerColor = widget.normalColor; // Reset color to normal state
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15),
+      child: GestureDetector(
+        onTap: () {
+          widget.onTapAction(); // Call the passed function on tap
+        },
+        child: MouseRegion(
+          onEnter: _onHover, // Hover effect starts
+          onExit: _onExit, // Hover effect ends
+          child: Transform.scale(
+            scale: scale, // Apply the zoom effect
+            child: Container(
+              height: 100, // Set the height of the container
+              width: 100, // Set the width of the container
+              decoration: BoxDecoration(
+                color: containerColor, // Dynamic color based on hover state
+                borderRadius: BorderRadius.circular(20), // Rounded edges
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.5), // White shadow effect
+                    blurRadius: 10,
+                    spreadRadius: 1,
+                    offset: const Offset(0, 5), // Shadow position
+                  ),
+                ],
+              ),
+              padding: const EdgeInsets.all(5),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(50), // Circular image
+                    child: Image.asset(
+                      widget.imagePath, // Use the passed image URL
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Text(
+                    widget.text, // Use the passed text
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
