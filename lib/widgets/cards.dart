@@ -59,6 +59,15 @@ class _CardsState extends State<Cards> {
               borderColor: Colors.purple,
               hoverColor: Colors.purpleAccent,
             ),
+            const SizedBox(width: 20),
+            makeCard(
+              title: "IOT Application With FLutter",
+              description: "Can Turn Normal Home into Smart Home with IOT APP",
+              description2:
+                  "Can Create IOT(Internet Of Things) / Smart App With Flutter and Arduino IDE , That helps to control your electronic using your phone ",
+              borderColor: Colors.amber,
+              hoverColor: const Color.fromARGB(255, 254, 193, 11),
+            ),
           ],
         ),
       ),
